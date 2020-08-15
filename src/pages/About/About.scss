@@ -1,0 +1,37 @@
+.body {
+  position: static;
+  margin-top: -50px;
+}
+
+.logo {
+  height: 5rem;
+  margin-right: 4rem;
+  background-color: #000000;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+
+.pic-cont {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-right: auto;
+  margin-left: 3rem;
+}
+
+.pic-cont img {
+  height: 100%;
+  border: 2px solid rgb(136, 136, 136);
+  border-radius: 4px;
+}
+
+.header-p {
+  margin: 2rem;
+  padding-right: 15rem;
+}
+
+.conttt {
+  margin-left: 3rem;
+}

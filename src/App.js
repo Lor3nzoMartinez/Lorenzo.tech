@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Header from "./pages/Header/Header";
+import About from "./pages/About/About";
+import Skills from "./pages/Skills/Skills";
+import Projects from "./pages/Projects/Projects";
+import Experience from "./pages/Experience/Experience";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      <Row className="mx-5">
+        <Col>
+          <Header />
+        </Col>
+      </Row>
+
+      <Row className="mx-5">
+        <Col xs="6">
+          <About />
+          <Skills />
+        </Col>
+        <Col xs="6">
+          <Experience />
+        </Col>
+      </Row>
+
+      <Row className="mx-5">
+        <Col>
+          <Projects />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
