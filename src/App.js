@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Header from "./pages/Header/Header";
-import About from "./pages/About/About";
 import Skills from "./pages/Skills/Skills";
 import Projects from "./pages/Projects/Projects";
 import Experience from "./pages/Experience/Experience";
@@ -17,11 +16,8 @@ function App() {
       </Row>
 
       <Row className="mx-5">
-        <Col xs="6">
-          <About />
+        <Col>
           <Skills />
-        </Col>
-        <Col xs="6">
           <Experience />
         </Col>
       </Row>

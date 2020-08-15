@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Collapse, Progress } from "reactstrap";
+import { Col, Progress } from "reactstrap";
 import "./SkillCard.scss";
 
-function SkillCard({ name, pro, yexp, proj, overall, color, colr }) {
+function SkillCard({ details }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  const { name } = details.name;
+  const { pro } = details.pro;
+  const { yexp } = details.yexp;
+  const { proj } = details.proj;
+  const { overall } = details.overall;
+  const { color } = details.color;
+  const { colr } = details.colr;
+  const { ocom } = details.ocom;
 
   const Div = styled.div`
     display: flex;
@@ -16,39 +25,36 @@ function SkillCard({ name, pro, yexp, proj, overall, color, colr }) {
     margin: 0.75rem;
     cursor: pointer;
 
-    & h3 {
-      margin-top: 0.5rem;
+    ${colr ? `border: 2px solid ${colr};` : `border: 2px solid ${color};`}
+      
+    -webkit-box-shadow: 9px 8px 0px 1px ${color};
+    -moz-box-shadow: 9px 8px 0px 1px ${color};
+    box-shadow: 9px 8px 0px 1px ${color};
+
+    h3 {
+      color: ${color};
     }
 
-    &:hover {
-      ${colr ? `border: 2px solid ${colr};` : `border: 2px solid ${color};`}
-      
-      -webkit-box-shadow: 9px 8px 0px 1px ${color};
-      -moz-box-shadow: 9px 8px 0px 1px ${color};
-      box-shadow: 9px 8px 0px 1px ${color};
-
-      h3 {
-        color: ${color};
-      }
+    & h3 {
+      margin-top: 0.5rem;
     }
   `;
 
   return (
     <div className="flex-column" onClick={toggle}>
       <Div className="d-flex px-3">
-        <h3>{name}</h3>
-
-        <Collapse className="p-3" isOpen={isOpen}>
-          Proficientcy: {pro}
-          <br />
-          Number of Projects: {proj}
-          <br />
-          Years of Experience: {yexp}
-          <br />
-          Overall Comfort:
-          <br />
-          <Progress value={overall} />
-        </Collapse>
+        <Col>
+          <h3 className="text-center">
+            <u>{name}</u>
+          </h3>
+          <div className="d-flex justify-content-around">
+            <h4>Proficientcy: {pro}</h4>
+            <h4>Number of Projects: {proj}</h4>
+            <h4>Years of Experience: {yexp}</h4>
+            <h4>Overall Comfort: {ocom}</h4>
+          </div>
+          <Progress className="mx-auto m-4 w-75" value={overall} />
+        </Col>
       </Div>
     </div>
   );

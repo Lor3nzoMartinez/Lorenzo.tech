@@ -19,7 +19,7 @@ const Project = ({ name, url, description, link, gitlink }) => {
     }
   `;
   return (
-    <Div className="proj">
+    <Div className="proj w-75 mx-auto">
       <div className="titl">
         <p className="h3">{name}</p>
       </div>
@@ -33,7 +33,7 @@ const Project = ({ name, url, description, link, gitlink }) => {
       <div className="buttons">
         <Button
           outline
-          color="secondary"
+          color="info"
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -42,7 +42,7 @@ const Project = ({ name, url, description, link, gitlink }) => {
         </Button>{" "}
         <Button
           outline
-          color="secondary"
+          color="info"
           href={gitlink}
           target="_blank"
           rel="noopener noreferrer"

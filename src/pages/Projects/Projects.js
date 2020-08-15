@@ -1,11 +1,11 @@
 import React from "react";
-import { Badge, Card, CardBody, CardTitle } from "reactstrap";
+import { Badge, Card, CardTitle } from "reactstrap";
 import { Divider } from "semantic-ui-react";
 import Project from "./Project/Project";
 
 /*    TODO
- * []
- *
+ * [] Add images to project tile
+ * [] Add paralax style to project card
  *
  *
  */

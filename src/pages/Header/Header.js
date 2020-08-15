@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "semantic-ui-react";
-import { Card, CardTitle, CardBody, Col, Row } from "reactstrap";
-import logo from "../../media/L_Logo_LowRes_White_crop.png";
+import { Card, CardTitle, CardBody, Row } from "reactstrap";
 import "./Header.scss";
 
 /*    TODO
@@ -49,7 +48,7 @@ function Header() {
     return (
       <>
         <a
-          className="navit-char mr-3"
+          className="navit-char mr-3 text-decoration-none"
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -63,66 +62,76 @@ function Header() {
   return (
     <Card className="my-3">
       <CardTitle className="pl-3 mt-3">
-        <Row className="d-flex justify-content-center">
-          <div className="d-flex">
-            {/* <img className="logo" src={logo} alt="pic.jpg" /> */}
+        <Row className="d-flex justify-content-center text-center">
+          <div>
             <p className="display-3">Lorenzo Martinez</p>
+            <h2 className="py-4">Software Engineer | Web Developer</h2>
+            <p className="lead text-center" style={{ width: "700px" }}>
+              Well-rounded technologist with years of experience in everything
+              from client-side operations to back-end data manipulation.
+              Well-versed in scripting and programming languages including C++,
+              Bash, Python, JavaScript, and Java. Proficient communication,
+              leadership, and project management abilities.
+            </p>
           </div>
         </Row>
       </CardTitle>
 
       <CardBody>
-        <Col>
-          <Row>
-            <Div>
-              <Icon fitted size="large" name={"envelope"} />
-              <h4 className="lead">E-Mail</h4>
-              <h3 className="lead">
-                <a
-                  className="text-decoration-none"
-                  href="mailto: contact@lorenzo.tech"
-                >
-                  contact@lorenzo.tech
-                </a>
-              </h3>
-            </Div>
-            <Div>
-              <Icon fitted size="large" name={"phone"} />
-              <h4 className="lead">Phone Number</h4>
-              <h3 className="lead">
-                <a className="text-decoration-none" href="tel:+17606689927">
-                  +1 (760) 668-9927
-                </a>
-              </h3>
-            </Div>
-            <Div>
-              <Icon fitted size="large" name={"map marker alternate"} />
-              <h4 className="lead">Location</h4>
-              <h3 className="lead">
-                <a
-                  className="text-decoration-none"
-                  href="https://goo.gl/maps/WAasSV5NsxVAG8AAA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Seattle, WA
-                </a>
-              </h3>
-            </Div>
-            <div className="d-flex align-items-end ml-auto">
-              <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
-              <Charm icon="gitlab" link="https://gitlab.com/Lorenzo.Martinez" />
-              <Charm
-                icon="linkedin"
-                link="https://www.linkedin.com/in/lorenzo-martinez/"
-              />
-              <Charm
-                icon="instagram"
-                link="https://www.instagram.com/lorenzo.tech/"
-              />
-            </div>
-          </Row>
-        </Col>
+        <div className="d-flex align-items-center justify-content-center mb-3">
+          <Div>
+            <Icon fitted size="large" name={"envelope"} />
+            <h4>E-Mail</h4>
+            <h4
+              className="text-truncate bd-highlight"
+              style={{ width: "8rem" }}
+            >
+              <a
+                className="text-decoration-none"
+                href="mailto: contact@lorenzo.tech"
+                style={{ width: "150px" }}
+              >
+                contact@lorenzo.tech
+              </a>
+            </h4>
+          </Div>
+          <Div>
+            <Icon fitted size="large" name={"phone"} />
+            <h4>Phone Number</h4>
+            <h4>
+              <a className="text-decoration-none" href="tel:+17606689927">
+                +1 (760) 668-9927 <br />
+              </a>
+            </h4>
+          </Div>
+          <Div>
+            <Icon fitted size="large" name={"map marker alternate"} />
+            <h4>Location</h4>
+            <h4>
+              <a
+                className="text-decoration-none"
+                href="https://goo.gl/maps/WAasSV5NsxVAG8AAA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Seattle, WA
+              </a>
+            </h4>
+          </Div>
+        </div>
+
+        <div className="d-flex align-items-end justify-content-center">
+          <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
+          <Charm icon="gitlab" link="https://gitlab.com/Lorenzo.Martinez" />
+          <Charm
+            icon="linkedin"
+            link="https://www.linkedin.com/in/lorenzo-martinez/"
+          />
+          <Charm
+            icon="instagram"
+            link="https://www.instagram.com/lorenzo.tech/"
+          />
+        </div>
       </CardBody>
     </Card>
   );
