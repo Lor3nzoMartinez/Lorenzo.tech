@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Col, Progress } from "reactstrap";
+import styled from "styled-components";
 import "./SkillCard.scss";
 
 function SkillCard({ details }) {
@@ -26,7 +26,7 @@ function SkillCard({ details }) {
     cursor: pointer;
 
     ${colr ? `border: 2px solid ${colr};` : `border: 2px solid ${color};`}
-      
+
     -webkit-box-shadow: 9px 8px 0px 1px ${color};
     -moz-box-shadow: 9px 8px 0px 1px ${color};
     box-shadow: 9px 8px 0px 1px ${color};

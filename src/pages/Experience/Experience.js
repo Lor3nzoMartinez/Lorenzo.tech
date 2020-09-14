@@ -3,7 +3,7 @@ import { Badge } from "reactstrap";
 import { Divider } from "semantic-ui-react";
 import "./Experience.scss";
 
-export default function Experience() {
+const Experience = () => {
   return (
     <div className="compcard">
       <div className="mt-4">
@@ -88,4 +88,6 @@ export default function Experience() {
       </div>
     </div>
   );
-}
+};
+
+export default Experience;

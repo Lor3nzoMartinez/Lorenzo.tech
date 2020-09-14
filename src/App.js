@@ -1,82 +1,70 @@
-import React, { useState, useEffect } from "react";
-import { Grid, Container } from "semantic-ui-react";
+import React from "react";
+import { createMedia } from "@artsy/fresnel";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { Grid, Container, Segment } from "semantic-ui-react";
 import About from "./pages/About/About";
 import Header from "./pages/Header/Header";
-import MobHeader from "./pages/MobHeader/MobHeader";
 import Skills from "./pages/Skills/Skills";
 import Projects from "./pages/Projects/Projects";
 import Experience from "./pages/Experience/Experience";
 import "./App.scss";
 
+const AppMedia = createMedia({
+  breakpoints: {
+    mobile: 320,
+    tablet: 768,
+    computer: 992,
+    largeScreen: 1200,
+    widescreen: 1920,
+  },
+});
+
+const mediaStyles = AppMedia.createMediaStyle();
+const { Media, MediaContextProvider } = AppMedia;
+
+library.add(fab, fas);
+
 function App() {
-  const [scrnWidth, setScrnWidth] = useState(window.innerWidth);
-
-  useEffect(async () => {
-    while (scrnWidth != window.innerWidth) {
-      setScrnWidth(window.innerWidth);
-    }
-    console.log(window.innerWidth);
-  }, [window.innerWidth]);
-
   return (
     <Container>
-      {scrnWidth < 992 ? (
-        <Grid centered columns="equal">
-          <Grid.Row centered>
-            <Grid.Column>
-              <MobHeader />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <About />
-              <Experience />
-              <Skills />
-              <Projects />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      ) : (
-        <Grid centered columns="equal">
-          <Grid.Row centered>
-            <Grid.Column>
-              <Header />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <About />
-              <Experience />
-            </Grid.Column>
-            <Grid.Column>
-              <Skills />
-              <Projects />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      )}
+      <style>{mediaStyles}</style>
+      <MediaContextProvider>
+        <Segment basic as={Media} lessThan="computer">
+          <Grid centered columns="equal">
+            <Grid.Row centered>
+              <Grid.Column>
+                <Header Media={Media} />
+                <About Media={Media} />
+                <Experience Media={Media} />
+                <Skills Media={Media} />
+                <Projects Media={Media} />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+        <Segment basic as={Media} greaterThanOrEqual="computer">
+          <Grid centered columns="equal">
+            <Grid.Row centered>
+              <Grid.Column>
+                <Header Media={Media} />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <About Media={Media} />
+                <Experience Media={Media} />
+              </Grid.Column>
+              <Grid.Column>
+                <Skills Media={Media} />
+                <Projects Media={Media} />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </MediaContextProvider>
     </Container>
-
-    // <Container fluid>
-    //   <Row className="mx-5">
-    //     <Col>
-    //       <Header />
-    //     </Col>
-    //   </Row>
-
-    //   <Row className="mx-5">
-    //     <Col>
-    //       <Skills />
-    //       <Experience />
-    //     </Col>
-    //   </Row>
-
-    //   <Row className="mx-5">
-    //     <Col>
-    //       <Projects />
-    //     </Col>
-    //   </Row>
-    // </Container>
   );
 }
 

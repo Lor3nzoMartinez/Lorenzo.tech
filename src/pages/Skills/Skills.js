@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Badge, Collapse } from "reactstrap";
+import { Divider, Grid } from "semantic-ui-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { Divider, Grid, Segment } from "semantic-ui-react";
 import SkillCard from "./SkillCard/SkillCard";
 
 function Skills() {
@@ -19,12 +20,23 @@ function Skills() {
     ocom: "",
   });
 
-  function StyledButton({ name, pro, yexp, proj, overall, color, colr, ocom }) {
+  function StyledButton({
+    name,
+    pro,
+    yexp,
+    proj,
+    overall,
+    color,
+    colr,
+    ocom,
+    icon,
+    iconID,
+  }) {
     const Div = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid #000000;
+      border: 1px solid #000000;
       padding: 0.25rem;
       margin: 0.75rem;
       cursor: pointer;
@@ -34,13 +46,13 @@ function Skills() {
       }
 
       &:hover {
-        ${colr ? `border: 2px solid ${colr};` : `border: 2px solid ${color};`}
+        ${colr ? `border: 1px solid ${colr};` : `border: 1px solid ${color};`}
 
         -webkit-box-shadow: 9px 8px 0px 1px ${color};
         -moz-box-shadow: 9px 8px 0px 1px ${color};
         box-shadow: 9px 8px 0px 1px ${color};
 
-        h3 {
+        p {
           color: ${color};
         }
       }
@@ -61,9 +73,16 @@ function Skills() {
     }
 
     return (
-      <Div onClick={() => updateCard()} className="d-flex px-3">
-        <h4 className="text-truncate">{name}</h4>
-        <br />
+      <Div
+        onClick={() => updateCard()}
+        className="d-flex justify-content-between px-3"
+      >
+        <FontAwesomeIcon
+          color={color}
+          size="lg"
+          icon={[`${iconID}`, `${icon}`]}
+        />
+        <p className="text-truncate h5">{name}</p>
       </Div>
     );
   }
@@ -83,6 +102,8 @@ function Skills() {
             <Grid.Column>
               <StyledButton
                 name="JavaScript"
+                iconID="fab"
+                icon="js"
                 yexp="4"
                 pro="Experienced"
                 proj="8"
@@ -92,6 +113,8 @@ function Skills() {
               />
               <StyledButton
                 name="React"
+                iconID="fab"
+                icon="react"
                 yexp="4"
                 pro="Experienced"
                 proj="4"
@@ -101,6 +124,8 @@ function Skills() {
               />
               <StyledButton
                 name="Bash"
+                iconID="fas"
+                icon="dollar-sign"
                 yexp="4"
                 pro="Adept"
                 proj="All of them"
@@ -108,10 +133,23 @@ function Skills() {
                 color="#4daa25"
                 ocom="Low to Moderate"
               />
+              <StyledButton
+                name="HTML"
+                iconID="fab"
+                icon="html5"
+                yexp="4"
+                pro="Adept"
+                proj="4"
+                overall="64"
+                color="#264de4"
+                ocom="High Moderate"
+              />
             </Grid.Column>
             <Grid.Column>
               <StyledButton
                 name="Bootstrap"
+                iconID="fab"
+                icon="bootstrap"
                 yexp="3"
                 pro="Experienced"
                 proj="6"
@@ -121,6 +159,8 @@ function Skills() {
               />
               <StyledButton
                 name="Java"
+                iconID="fab"
+                icon="java"
                 yexp="3"
                 pro="Novice"
                 proj="4"
@@ -130,6 +170,8 @@ function Skills() {
               />
               <StyledButton
                 name="Python"
+                iconID="fab"
+                icon="python"
                 yexp="3"
                 pro="Adept"
                 proj="4"
@@ -139,19 +181,22 @@ function Skills() {
                 ocom="Moderate"
               />
               <StyledButton
-                name="HTML/CSS"
+                name="CSS"
+                iconID="fab"
+                icon="css3-alt"
                 yexp="4"
                 pro="Adept"
                 proj="4"
                 overall="64"
                 color="#e54c21"
-                colr="#264de4"
                 ocom="High Moderate"
               />
             </Grid.Column>
             <Grid.Column>
               <StyledButton
                 name="GraphQL"
+                iconID="fas"
+                icon="project-diagram"
                 yexp="1"
                 pro="Experienced"
                 proj="4"
@@ -161,6 +206,8 @@ function Skills() {
               />
               <StyledButton
                 name="C++"
+                iconID="fas"
+                icon="copyright"
                 yexp="1"
                 pro="Novice"
                 proj="4"
@@ -170,6 +217,8 @@ function Skills() {
               />
               <StyledButton
                 name="AWS"
+                iconID="fab"
+                icon="aws"
                 yexp="2"
                 pro="Novice"
                 proj="4"

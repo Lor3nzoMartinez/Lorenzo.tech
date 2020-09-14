@@ -1,49 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { Icon } from "semantic-ui-react";
+import { Icon, Reveal, Segment } from "semantic-ui-react";
 import "./Header.scss";
 
-function Header() {
-  const Div = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-right: 2rem;
-    margin-right: 2rem;
-
-    h3,
-    h4 {
-      position: relative;
-      overflow: hidden;
-      font-weight: 400;
-      margin: 0;
-      padding: 2px 5px;
-      font-size: 20px;
-    }
-
-    h4 {
-      font-weight: 600;
-      margin: 5px 0;
-      font-style: 30px;
-    }
-
-    .fa {
-      margin-bottom: 0.75rem;
-    }
-
-    a {
-      color: darkgrey;
-    }
-
-    a:hover {
-      color: black;
-    }
-
-    :hover {
-    }
-  `;
-
+function Header({ Media }) {
   function Charm({ link, icon }) {
     return (
       <>
@@ -61,46 +20,46 @@ function Header() {
 
   return (
     <div className="mt-3">
-      <div className="d-flex justify-content-between align-items-center ">
-        <p className="display-4">Lorenzo Martinez</p>
-        <p className="display-4">Software Developer</p>
-      </div>
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="d-flex">
-          <Div>
-            <div className="d-flex align-items-center">
-              <Icon fitted size="large" name={"envelope"} />
-              <h4 className="ml-3">E-Mail</h4>
-            </div>
-            <h4
-              className="text-truncate bd-highlight"
-              style={{ width: "8rem" }}
-            >
+      <Segment basic as={Media} lessThan="tablet">
+        <div className="d-flex flex-column justify-content-center align-items-center mb-4">
+          <p className="h2">Lorenzo Martinez</p>
+          <p className="h3">Software Developer</p>
+        </div>
+
+        <div className="info">
+          <div className="info-content">
+            <Icon fitted size="large" name={"envelope"} />
+            <p className="ml-3 h4">E-Mail</p>
+          </div>
+          <div className="info-sub">
+            <p className="h4 text-truncate">
               <a
                 className="text-decoration-none"
                 href="mailto: contact@lorenzo.tech"
               >
                 contact@lorenzo.tech
               </a>
-            </h4>
-          </Div>
-          <Div>
-            <div className="d-flex align-items-center">
-              <Icon fitted size="large" name={"phone"} />
-              <h4 className="ml-3">Phone Number</h4>
-            </div>
-            <h4>
+            </p>
+          </div>
+
+          <div className="info-content">
+            <Icon fitted size="large" name={"phone"} />
+            <p className="ml-3 h4">Phone Number</p>
+          </div>
+          <div className="info-sub">
+            <p className="h4">
               <a className="text-decoration-none" href="tel:+17606689927">
                 +1 (760) 668-9927 <br />
               </a>
-            </h4>
-          </Div>
-          <Div>
-            <div className="d-flex align-items-center">
-              <Icon fitted size="large" name={"map marker alternate"} />
-              <h4 className="ml-3">Location</h4>
-            </div>
-            <h4>
+            </p>
+          </div>
+
+          <div className="info-content">
+            <Icon fitted size="large" name={"map marker alternate"} />
+            <p className="ml-3 h4">Location</p>
+          </div>
+          <div className="info-sub">
+            <p className="h4">
               <a
                 className="text-decoration-none"
                 href="https://goo.gl/maps/WAasSV5NsxVAG8AAA"
@@ -109,8 +68,72 @@ function Header() {
               >
                 Seattle, WA
               </a>
-            </h4>
-          </Div>
+            </p>
+          </div>
+        </div>
+        <div className="d-flex align-items-end justify-content-around">
+          <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
+          <Charm icon="gitlab" link="https://gitlab.com/Lorenzo.Martinez" />
+          <Charm
+            icon="linkedin"
+            link="https://www.linkedin.com/in/lorenzo-martinez/"
+          />
+          <Charm
+            icon="instagram"
+            link="https://www.instagram.com/lorenzo.tech/"
+          />
+        </div>
+      </Segment>
+      <Segment basic as={Media} at="tablet">
+        <div className="d-flex flex-column justify-content-center align-items-center mb-4">
+          <p className="display-4">Lorenzo Martinez</p>
+          <p className="h1">Software Developer</p>
+        </div>
+
+        <div className="info">
+          <div className="info-content">
+            <Icon fitted size="large" name={"envelope"} />
+            <p className="ml-3 h2">E-Mail</p>
+          </div>
+          <div className="info-sub">
+            <p className="h3 text-truncate">
+              <a
+                className="text-decoration-none"
+                href="mailto: contact@lorenzo.tech"
+              >
+                contact@lorenzo.tech
+              </a>
+            </p>
+          </div>
+
+          <div className="info-content">
+            <Icon fitted size="large" name={"phone"} />
+            <p className="ml-3 h2">Phone Number</p>
+          </div>
+          <div className="info-sub">
+            <p className="h3">
+              <a className="text-decoration-none" href="tel:+17606689927">
+                +1 (760) 668-9927 <br />
+              </a>
+            </p>
+          </div>
+
+          <div className="info-content">
+            <Icon fitted size="large" name={"map marker alternate"} />
+            <p className="ml-3 h2">Location</p>
+          </div>
+          <div className="info-sub">
+            <p className="h3">
+              <a
+                className="text-decoration-none"
+                href="https://goo.gl/maps/WAasSV5NsxVAG8AAA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Seattle, WA
+              </a>
+            </p>
+          </div>
         </div>
         <div className="d-flex align-items-end justify-content-center">
           <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
@@ -124,7 +147,75 @@ function Header() {
             link="https://www.instagram.com/lorenzo.tech/"
           />
         </div>
-      </div>
+      </Segment>
+      <Segment basic as={Media} greaterThanOrEqual="computer">
+        <div className="d-flex justify-content-between align-items-center">
+          <p className="display-4">Lorenzo Martinez</p>
+          <p className="display-4">Software Developer</p>
+        </div>
+        <div className="d-flex justify-content-between align-items-center mt-3">
+          <div className="d-flex">
+            <a href="mailto: contact@lorenzo.tech">
+              <Reveal className="revstuff" animated="move up">
+                <Reveal.Content visible>
+                  <div className="hidder">
+                    <Icon fitted size="large" name={"envelope"} />
+                    <p className="ml-3 h2">E-Mail</p>
+                  </div>
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                  <p className="h3 text-truncate">contact@lorenzo.tech</p>
+                </Reveal.Content>
+              </Reveal>
+            </a>
+            <a className="text-decoration-none" href="tel:+17606689927">
+              <Reveal className="revstuff" animated="move up">
+                <Reveal.Content visible>
+                  <div className="hidder">
+                    <Icon fitted size="large" name={"phone"} />
+                    <p className="ml-3 h2">Phone Number</p>
+                  </div>
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                  <p className="h3">
+                    +1 (760) 668-9927 <br />
+                  </p>
+                </Reveal.Content>
+              </Reveal>
+            </a>
+            <a
+              className="text-decoration-none"
+              href="https://goo.gl/maps/WAasSV5NsxVAG8AAA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Reveal className="revstuff" animated="move up">
+                <Reveal.Content visible>
+                  <div className="hidder">
+                    <Icon fitted size="large" name={"map marker alternate"} />
+                    <p className="ml-3 h2">Location</p>
+                  </div>
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                  <p className="h3">Seattle, WA</p>
+                </Reveal.Content>
+              </Reveal>
+            </a>
+          </div>
+          <div className="d-flex align-items-end justify-content-center">
+            <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
+            <Charm icon="gitlab" link="https://gitlab.com/Lorenzo.Martinez" />
+            <Charm
+              icon="linkedin"
+              link="https://www.linkedin.com/in/lorenzo-martinez/"
+            />
+            <Charm
+              icon="instagram"
+              link="https://www.instagram.com/lorenzo.tech/"
+            />
+          </div>
+        </div>
+      </Segment>
     </div>
   );
 }

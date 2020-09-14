@@ -1,25 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { Button } from "reactstrap";
+import Charm from "./Charm/Charm";
 import "./Project.scss";
 
-const Project = ({ name, url, description, link, gitlink, date }) => {
-  const Div = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #000000;
-    padding: 0.25rem;
-    margin: 0.75rem;
-    cursor: pointer;
-
-    & h3 {
-      margin-top: 0.5rem;
-    }
-  `;
-
+const Project = ({ name, description, link, gitlink, date }) => {
   return (
-    <div className="p-4">
+    <div className="compcard p-4 mt-3 mx-3">
       <div className="titl">
         <a href={link} target="_blank" rel="noopener noreferrer">
           <p className="h3">
@@ -34,6 +20,13 @@ const Project = ({ name, url, description, link, gitlink, date }) => {
           <em>{date}</em>
         </p>
       </div>
+
+      <div className="d-flex mt-3">
+        <Charm color={"#61dafb"} icon={"react"} iconID={"fab"} />
+        <Charm color={"#e0bb53"} icon={"js"} iconID={"fab"} />
+        <Charm color={"#e00097"} icon={"project-diagram"} iconID={"fas"} />
+      </div>
+
       <div className="desc">
         <p className="h6">{description}</p>
       </div>
@@ -46,7 +39,7 @@ const Project = ({ name, url, description, link, gitlink, date }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {name} Site
+          Live Site
         </Button>{" "}
         <Button
           outline
