@@ -1,15 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "semantic-ui-react";
-import { Card, CardTitle, CardBody, Row } from "reactstrap";
 import "./Header.scss";
-
-/*    TODO
- * [ ] charm hover and text deco
- * []
- *
- *
- */
 
 function Header() {
   const Div = styled.div`
@@ -17,8 +9,8 @@ function Header() {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.25rem;
-    margin: 0.75rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
 
     h3,
     h4 {
@@ -38,6 +30,14 @@ function Header() {
 
     .fa {
       margin-bottom: 0.75rem;
+    }
+
+    a {
+      color: darkgrey;
+    }
+
+    a:hover {
+      color: black;
     }
 
     :hover {
@@ -60,28 +60,18 @@ function Header() {
   }
 
   return (
-    <Card className="my-3">
-      <CardTitle className="pl-3 mt-3">
-        <Row className="d-flex justify-content-center text-center">
-          <div>
-            <p className="display-3">Lorenzo Martinez</p>
-            <h2 className="py-4">Software Engineer | Web Developer</h2>
-            <p className="lead text-center" style={{ width: "700px" }}>
-              Well-rounded technologist with years of experience in everything
-              from client-side operations to back-end data manipulation.
-              Well-versed in scripting and programming languages including C++,
-              Bash, Python, JavaScript, and Java. Proficient communication,
-              leadership, and project management abilities.
-            </p>
-          </div>
-        </Row>
-      </CardTitle>
-
-      <CardBody>
-        <div className="d-flex align-items-center justify-content-center mb-3">
+    <div className="mt-3">
+      <div className="d-flex justify-content-between align-items-center ">
+        <p className="display-4">Lorenzo Martinez</p>
+        <p className="display-4">Software Developer</p>
+      </div>
+      <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex">
           <Div>
-            <Icon fitted size="large" name={"envelope"} />
-            <h4>E-Mail</h4>
+            <div className="d-flex align-items-center">
+              <Icon fitted size="large" name={"envelope"} />
+              <h4 className="ml-3">E-Mail</h4>
+            </div>
             <h4
               className="text-truncate bd-highlight"
               style={{ width: "8rem" }}
@@ -89,15 +79,16 @@ function Header() {
               <a
                 className="text-decoration-none"
                 href="mailto: contact@lorenzo.tech"
-                style={{ width: "150px" }}
               >
                 contact@lorenzo.tech
               </a>
             </h4>
           </Div>
           <Div>
-            <Icon fitted size="large" name={"phone"} />
-            <h4>Phone Number</h4>
+            <div className="d-flex align-items-center">
+              <Icon fitted size="large" name={"phone"} />
+              <h4 className="ml-3">Phone Number</h4>
+            </div>
             <h4>
               <a className="text-decoration-none" href="tel:+17606689927">
                 +1 (760) 668-9927 <br />
@@ -105,8 +96,10 @@ function Header() {
             </h4>
           </Div>
           <Div>
-            <Icon fitted size="large" name={"map marker alternate"} />
-            <h4>Location</h4>
+            <div className="d-flex align-items-center">
+              <Icon fitted size="large" name={"map marker alternate"} />
+              <h4 className="ml-3">Location</h4>
+            </div>
             <h4>
               <a
                 className="text-decoration-none"
@@ -119,7 +112,6 @@ function Header() {
             </h4>
           </Div>
         </div>
-
         <div className="d-flex align-items-end justify-content-center">
           <Charm icon="github" link="https://github.com/Lor3nzoMartinez" />
           <Charm icon="gitlab" link="https://gitlab.com/Lorenzo.Martinez" />
@@ -132,8 +124,8 @@ function Header() {
             link="https://www.instagram.com/lorenzo.tech/"
           />
         </div>
-      </CardBody>
-    </Card>
+      </div>
+    </div>
   );
 }
 

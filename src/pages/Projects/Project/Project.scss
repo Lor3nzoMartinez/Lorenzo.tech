@@ -1,80 +1,29 @@
-.proj {
-  height: 60rem;
+.titl {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  :hover {
+    color: darkgray;
+    cursor: pointer;
+  }
+}
+
+.date {
+  margin-top: 0.25rem;
+}
+
+.charmbar {
+  margin-top: 0.25rem;
+}
+
+.desc {
+  margin-top: 1rem;
+}
+
+.buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  transition: 2s;
-  transition-timing-function: linear;
-}
-
-.proj:hover {
-  div {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    visibility: visible;
-  }
-
-  .titl {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(119, 119, 119, 0.25);
-    color: rgba(211, 211, 211, 0.85);
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem;
-    visibility: visible;
-  }
-
-  .h3 {
-    display: flex;
-    justify-content: center;
-    visibility: visible;
-  }
-
-  .h4 {
-    display: flex;
-    justify-content: center;
-    visibility: visible;
-  }
-
-  .desc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(119, 119, 119, 0.25);
-    color: rgba(211, 211, 211, 0.85);
-    margin: auto;
-    padding: 1rem;
-    visibility: visible;
-
-    .h4 {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .buttons {
-    margin-bottom: 5rem;
-  }
-}
-
-.proj .h3 {
-  visibility: hidden;
-}
-
-.proj .h4 {
-  visibility: hidden;
-}
-
-.proj .desc {
-  visibility: hidden;
-}
-
-.proj div {
-  visibility: hidden;
+  justify-content: space-between;
+  margin-top: 1rem;
 }

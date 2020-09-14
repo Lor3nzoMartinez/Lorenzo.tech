@@ -3,33 +3,41 @@ import styled from "styled-components";
 import { Button } from "reactstrap";
 import "./Project.scss";
 
-const Project = ({ name, url, description, link, gitlink }) => {
+const Project = ({ name, url, description, link, gitlink, date }) => {
   const Div = styled.div`
-    background-image: url(${url});
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 2s;
-    transition-timing-function: linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    padding: 0.25rem;
+    margin: 0.75rem;
+    cursor: pointer;
 
-    :hover {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(${url});
-      background-position: center;
-      background-repeat: no-repeat;
+    & h3 {
+      margin-top: 0.5rem;
     }
   `;
+
   return (
-    <Div className="proj w-75 mx-auto">
+    <div className="p-4">
       <div className="titl">
-        <p className="h3">{name}</p>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <p className="h3">
+            <strong>
+              <u>{name}</u>
+            </strong>
+          </p>
+        </a>
+      </div>
+      <div className="date">
+        <p>
+          <em>{date}</em>
+        </p>
       </div>
       <div className="desc">
-        <p className="h4">
-          <u>Description</u>
-        </p>
         <p className="h6">{description}</p>
       </div>
-      {/* Skill bar here */}
+
       <div className="buttons">
         <Button
           outline
@@ -50,7 +58,7 @@ const Project = ({ name, url, description, link, gitlink }) => {
           Github Repo
         </Button>
       </div>
-    </Div>
+    </div>
   );
 };
 
