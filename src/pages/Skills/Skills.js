@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Badge, Collapse } from "reactstrap";
-import { Divider, Grid } from "semantic-ui-react";
+import { Divider, Grid, Segment } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import SkillCard from "./SkillCard/SkillCard";
 
-function Skills() {
+function Skills({ Media }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -100,6 +100,7 @@ function Skills() {
         <Grid centered columns="equal">
           <Grid.Row>
             <Grid.Column>
+              <Segment basic as={Media} lessThan="tablet"></Segment>
               <StyledButton
                 name="JavaScript"
                 iconID="fab"
