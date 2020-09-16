@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Badge, Collapse } from "reactstrap";
-import { Divider, Grid, Segment } from "semantic-ui-react";
+import { Divider, Grid, Container } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import SkillCard from "./SkillCard/SkillCard";
@@ -34,7 +34,7 @@ function Skills({ Media }) {
   }) {
     const Div = styled.div`
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       border: 1px solid #000000;
       padding: 0.25rem;
@@ -58,6 +58,20 @@ function Skills({ Media }) {
       }
     `;
 
+    const MobDiv = styled.div`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid ${color};
+      padding: 0.25rem;
+      margin: 0.75rem;
+      cursor: pointer;
+
+      & h3 {
+        margin-top: 0.5rem;
+      }
+    `;
+
     function updateCard() {
       setCurrentSkill({
         name: { name },
@@ -73,17 +87,34 @@ function Skills({ Media }) {
     }
 
     return (
-      <Div
-        onClick={() => updateCard()}
-        className="d-flex justify-content-between px-3"
-      >
-        <FontAwesomeIcon
-          color={color}
-          size="lg"
-          icon={[`${iconID}`, `${icon}`]}
-        />
-        <p className="text-truncate h5">{name}</p>
-      </Div>
+      <>
+        <Container as={Media} greaterThan="computer">
+          <Div
+            onClick={() => updateCard()}
+            className="d-flex justify-content-between px-3"
+          >
+            <FontAwesomeIcon
+              color={color}
+              size="lg"
+              icon={[`${iconID}`, `${icon}`]}
+            />
+            <p className="text-truncate h5">{name}</p>
+          </Div>
+        </Container>
+        <Container as={Media} lessThan="largeScreen">
+          <MobDiv
+            onClick={() => updateCard()}
+            className="d-flex justify-content-center"
+          >
+            <FontAwesomeIcon
+              className="icon-forms"
+              color={color}
+              size="lg"
+              icon={[`${iconID}`, `${icon}`]}
+            />
+          </MobDiv>
+        </Container>
+      </>
     );
   }
 
@@ -98,9 +129,8 @@ function Skills({ Media }) {
       </div>
       <div>
         <Grid centered columns="equal">
-          <Grid.Row>
+          <Grid.Row centered>
             <Grid.Column>
-              <Segment basic as={Media} lessThan="tablet"></Segment>
               <StyledButton
                 name="JavaScript"
                 iconID="fab"

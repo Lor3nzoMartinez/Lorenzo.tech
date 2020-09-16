@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Progress } from "reactstrap";
+import { Grid, Progress } from "semantic-ui-react";
 import styled from "styled-components";
 import "./SkillCard.scss";
 
@@ -8,13 +8,13 @@ function SkillCard({ details }) {
   const toggle = () => setIsOpen(!isOpen);
 
   const { name } = details.name;
-  const { pro } = details.pro;
+  // const { pro } = details.pro;
   const { yexp } = details.yexp;
-  const { proj } = details.proj;
+  // const { proj } = details.proj;
   const { overall } = details.overall;
   const { color } = details.color;
   const { colr } = details.colr;
-  const { ocom } = details.ocom;
+  // const { ocom } = details.ocom;
 
   const Div = styled.div`
     display: flex;
@@ -41,20 +41,23 @@ function SkillCard({ details }) {
   `;
 
   return (
-    <div className="flex-column" onClick={toggle}>
-      <Div className="d-flex px-3">
-        <Col>
-          <h3 className="text-center">
-            <u>{name}</u>
-          </h3>
-          <div className="d-flex justify-content-around">
-            <h4>Proficientcy: {pro}</h4>
-            <h4>Number of Projects: {proj}</h4>
-            <h4>Years of Experience: {yexp}</h4>
-            <h4>Overall Comfort: {ocom}</h4>
-          </div>
-          <Progress className="mx-auto m-4 w-75" value={overall} />
-        </Col>
+    <div onClick={toggle}>
+      <Div>
+        <Grid centered>
+          <Grid.Column>
+            <h3 className="text-center">
+              <u>{name}</u>
+            </h3>
+            <Grid.Row className="d-flex align-items-center py-3">
+              <p className="h4">Years of Experience:</p>
+              <p className="h4 ml-4">{yexp}</p>
+            </Grid.Row>
+            <Grid.Row className="d-flex align-items-center">
+              <div className="text-center h4">Overall Comfort:</div>
+            </Grid.Row>
+            <Progress success percent={overall} />
+          </Grid.Column>
+        </Grid>
       </Div>
     </div>
   );

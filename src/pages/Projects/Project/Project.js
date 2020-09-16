@@ -22,9 +22,14 @@ const Project = ({ name, description, link, gitlink, date }) => {
       </div>
 
       <div className="d-flex mt-3">
-        <Charm color={"#61dafb"} icon={"react"} iconID={"fab"} />
-        <Charm color={"#e0bb53"} icon={"js"} iconID={"fab"} />
-        <Charm color={"#e00097"} icon={"project-diagram"} iconID={"fas"} />
+        <Charm name="React" color={"#61dafb"} icon={"react"} iconID={"fab"} />
+        <Charm name="JavaScript" color={"#e0bb53"} icon={"js"} iconID={"fab"} />
+        <Charm
+          name="GraphQL"
+          color={"#e00097"}
+          icon={"project-diagram"}
+          iconID={"fas"}
+        />
       </div>
 
       <div className="desc">
