@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon, Reveal, Segment } from "semantic-ui-react";
 import "./Header.scss";
 
@@ -12,7 +13,11 @@ function Header({ Media }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon fitted size="large" name={icon} />
+          <FontAwesomeIcon
+            color={"white"}
+            size="lg"
+            icon={["fab", `${icon}`]}
+          />
         </a>
       </>
     );
@@ -20,7 +25,7 @@ function Header({ Media }) {
 
   return (
     <div className="mt-3">
-      <Segment basic as={Media} lessThan="tablet">
+      <Segment as={Media} lessThan="tablet">
         <div className="d-flex flex-column justify-content-center align-items-center mb-4">
           <p className="h2">Lorenzo Martinez</p>
           <p className="h3">Software Developer</p>
@@ -84,7 +89,7 @@ function Header({ Media }) {
           />
         </div>
       </Segment>
-      <Segment basic as={Media} at="tablet">
+      <Segment as={Media} at="tablet">
         <div className="d-flex flex-column justify-content-center align-items-center mb-4">
           <p className="display-4">Lorenzo Martinez</p>
           <p className="h1">Software Developer</p>
@@ -148,7 +153,7 @@ function Header({ Media }) {
           />
         </div>
       </Segment>
-      <Segment basic as={Media} greaterThanOrEqual="computer">
+      <Segment as={Media} greaterThanOrEqual="computer">
         <div className="d-flex justify-content-between align-items-center">
           <p className="display-4">Lorenzo Martinez</p>
           <p className="display-4">Software Developer</p>
