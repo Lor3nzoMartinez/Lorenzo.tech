@@ -3,7 +3,17 @@ import { Button } from "reactstrap";
 import Charm from "./Charm/Charm";
 import "./Project.scss";
 
-const Project = ({ name, description, link, gitlink, date }) => {
+const Project = ({
+  name,
+  description,
+  link,
+  gitlink,
+  date,
+  CharmOne,
+  CharmTwo,
+  CharmThree,
+}) => {
+  console.log(CharmOne);
   return (
     <div className="compcard p-4 mt-3 mx-3">
       <div className="titl">
@@ -22,14 +32,9 @@ const Project = ({ name, description, link, gitlink, date }) => {
       </div>
 
       <div className="d-flex mt-3">
-        <Charm name="React" color={"#61dafb"} icon={"react"} iconID={"fab"} />
-        <Charm name="JavaScript" color={"#e0bb53"} icon={"js"} iconID={"fab"} />
-        <Charm
-          name="GraphQL"
-          color={"#e00097"}
-          icon={"project-diagram"}
-          iconID={"fas"}
-        />
+        <Charm {...CharmOne} />
+        <Charm {...CharmTwo} />
+        <Charm {...CharmThree} />
       </div>
 
       <div className="desc">
