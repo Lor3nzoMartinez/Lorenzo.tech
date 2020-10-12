@@ -10,7 +10,7 @@ function Skills({ Media }) {
   const toggle = () => setIsOpen(!isOpen);
 
   const [currentSkill, setCurrentSkill] = useState({
-    name: "",
+    name: "ket",
     pro: "",
     yexp: "",
     proj: "",
@@ -83,7 +83,10 @@ function Skills({ Media }) {
         colr: { colr },
         ocom: { ocom },
       });
-      toggle();
+
+      if (!isOpen) {
+        toggle();
+      }
     }
 
     return (
@@ -262,7 +265,7 @@ function Skills({ Media }) {
         </Grid>
       </div>
       <Collapse className="mb-3 pr-2" isOpen={isOpen}>
-        <SkillCard details={currentSkill} />
+        <SkillCard toggle={toggle} details={currentSkill} />
       </Collapse>
     </div>
   );

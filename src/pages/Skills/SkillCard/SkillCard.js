@@ -1,20 +1,15 @@
 import React, { useState } from "react";
+import { Button } from "reactstrap";
 import { Grid, Progress } from "semantic-ui-react";
 import styled from "styled-components";
 import "./SkillCard.scss";
 
-function SkillCard({ details }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
+function SkillCard({ details, toggle }) {
   const { name } = details.name;
-  // const { pro } = details.pro;
   const { yexp } = details.yexp;
-  // const { proj } = details.proj;
   const { overall } = details.overall;
   const { color } = details.color;
   const { colr } = details.colr;
-  // const { ocom } = details.ocom;
 
   const Div = styled.div`
     display: flex;
