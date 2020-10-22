@@ -72,7 +72,7 @@ export const Projects = () => {
         name="Pollen Tracker"
         date={"Aug 21, 2019"}
         description="Pollen tracker is a progressive web app that will alert you of the pollen the count and weather in your area."
-        link="pollentracker.info "
+        link="https://www.pollentracker.info/"
         gitlink="https://github.com/Lor3nzoMartinez/pollentracker"
         CharmOne={aws}
         CharmTwo={bootstrap}

@@ -1,6 +1,8 @@
 {
-  "name": "personalsitee",
+  "name": "Lorenzo.tech",
   "version": "0.1.0",
+  "description": "This website is a personal portfolio / living resume for Lorenzo Martinez",
+  "author": "Lorenzo Martinez",
   "private": true,
   "dependencies": {
     "@artsy/fresnel": "^1.2.2",

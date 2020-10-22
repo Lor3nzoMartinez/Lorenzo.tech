@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Button } from "reactstrap";
+import React from "react";
 import { Grid, Progress } from "semantic-ui-react";
 import styled from "styled-components";
 import "./SkillCard.scss";
