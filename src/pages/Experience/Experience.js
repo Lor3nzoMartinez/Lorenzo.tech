@@ -16,14 +16,32 @@ const Experience = () => {
       <div className="p-4">
         <p className="h3">
           <u>
+            <strong>Cisco Meraki</strong>
+          </u>
+        </p>
+        <ul className="list-unstyled">
+          <li>
+            <p className="h5">Network Support Engineer | Jun 2021 - Aug 2021</p>
+            <ul>
+              <li>
+                Designed and developed an autonomous network using the Cisco
+                Meraki Dashboard API and Amazon Alexa.
+              </li>
+              <li>
+                Helped users manage and troubleshoot their network issues with
+                the Cisco Meraki Dashboard.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p className="h3">
+          <u>
             <strong>Pallet.Click (Start-up)</strong>
           </u>
         </p>
         <ul className="list-unstyled">
           <li>
-            <p className="h5">
-              Full-Stack Web Developer (Shareholder) | May 2019–Current
-            </p>
+            <p className="h5">Full-Stack Web Developer | May 2019 – Jun 2021</p>
             <ul>
               <li>Responsible for developing front end website architecture</li>
               <li>
